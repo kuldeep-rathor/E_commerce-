@@ -1,0 +1,19 @@
+/* About.module.css */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.img img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
+.content {
+  flex-grow: 1; 
+  padding: 20px;
+  text-align: justify; 
+  max-height: 80vh;
+}
