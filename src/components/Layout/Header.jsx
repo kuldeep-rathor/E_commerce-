@@ -38,6 +38,13 @@ const Header = (props) => {
             >
               ABOUT
             </Link>
+            <Link
+              style={{ color: "white" }}
+              to="/contact"
+              className="px-5 text-decoration-none"
+            >
+              CONTACT-US
+            </Link>
           </Nav>
           <HeaderCartButton onClick={props.onShowCart} />
         </Container>
