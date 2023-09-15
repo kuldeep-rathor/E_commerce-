@@ -10,8 +10,13 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import About from "./components/Pages/About";
 import Home from "./components/Pages/Home";
 import ContactUs from "./components/Pages/ContactUs";
+import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
+import AuthForm from "./components/AuthForm/AuthForm";
+import AuthContext from "./store/auth-context";
+import { useContext } from "react";
 
 function App() {
+  const authCtx = useContext(AuthContext)
   const [cartIsShown, setCartIsShown] = useState(false);
   const showCartHandler = () => {
     setCartIsShown(true);
@@ -21,20 +26,17 @@ function App() {
   };
   return (
     <>
-      {/* <header> */}
-      {/* <CartProvider>
-            {cartIsShown && <Cart onClose={hideCartHandler} />}
-            <Header onShowCart={showCartHandler} />
-            <main>
-              <Container className="py-4">
-                <Counter />
-              </Container>
-            </main>
-            <Footer />
-          </CartProvider>
-    </header> */}
+    {/* <AuthForm/> */}
       <Router>
         <Switch>
+        {/* <Route path="/" exact>
+            <Redirect to= "/store" />
+          </Route> */}
+          <Route path ="/login">
+            <AuthForm/>
+
+          </Route>
+
           <Route path="/about">
             <About />
           </Route>

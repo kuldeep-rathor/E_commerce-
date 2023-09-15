@@ -1,10 +1,10 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import "./Counter.css";
 import CartContext from "../../store/Cart-Context";
 
 const Counter = () => {
   const cartCtx = useContext(CartContext);
-  console.log("Counter running");
+
   const productsArr = [
     {
       id: 1,
@@ -40,12 +40,12 @@ const Counter = () => {
     },
   ];
 
-  const addButtonHandler=(item)=> {
+  const addButtonHandler = (item) => {
     cartCtx.addItem({
       ...item,
       amount: 1,
     });
-  }
+  };
 
   return (
     <div className="container px-1 mx-8">

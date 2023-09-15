@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import AuthContextProvider from "./store/AuthContextProvider";
 
 import "./index.css";
 
@@ -10,7 +11,11 @@ import "../node_modules/bootstrap/dist/css/bootstrap.css";
 // import "../node_modules/react-bootstrap/dist/react-bootstrap";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+root.render(
+  <AuthContextProvider>
+    <App />
+  </AuthContextProvider>
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

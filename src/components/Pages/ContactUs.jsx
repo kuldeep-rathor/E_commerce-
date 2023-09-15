@@ -1,4 +1,3 @@
-// ContactUs.js
 import React, { useState } from "react";
 import Header from "../Layout/Header";
 import Footer from "../Layout/Footer";
@@ -20,14 +19,16 @@ const ContactUs = () => {
     e.preventDefault();
 
     try {
-    
-      const response = await fetch("https://react-http-6de1b-default-rtdb.firebaseio.com/data.json", {
-        method: "POST",
-        body: JSON.stringify(formData),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        "https://react-http-6de1b-default-rtdb.firebaseio.com/data.json",
+        {
+          method: "POST",
+          body: JSON.stringify(formData),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Something went wrong. Please try again.");
