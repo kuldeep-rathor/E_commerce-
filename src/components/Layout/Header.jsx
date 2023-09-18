@@ -13,7 +13,7 @@ const Header = (props) => {
   const logoutHandler = () => {
     authCtx.logout();
   };
-  
+
   return (
     <React.Fragment>
       <Navbar
@@ -53,9 +53,9 @@ const Header = (props) => {
               CONTACT-US
             </Link>
             <button onClick={logoutHandler}>logout</button>
-            <Link to="/login">
-                <button variant="light">Login</button>
-              </Link>
+            <Link to="/login" style={{ textDecoration: "none" }}>
+              <button variant="light">Login</button>
+            </Link>
           </Nav>
           <HeaderCartButton onClick={props.onShowCart} />
         </Container>

@@ -14,6 +14,7 @@ import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 import AuthForm from "./components/AuthForm/AuthForm";
 import AuthContext from "./store/auth-context";
 import { useContext } from "react";
+import AuthContextProvider from "./store/AuthContextProvider";
 
 function App() {
   const authCtx = useContext(AuthContext)
@@ -25,14 +26,16 @@ function App() {
     setCartIsShown(false);
   };
   return (
-    <>
-    {/* <AuthForm/> */}
+    <AuthContextProvider>
+  
       <Router>
         <Switch>
-        {/* <Route path="/" exact>
-            <Redirect to= "/store" />
-          </Route> */}
+        <Route path="/" exact>
+            <Redirect to= "/login" />
+          </Route>
           <Route path ="/login">
+          {/* <Redirect path='/store'/> */}
+            
             <AuthForm/>
 
           </Route>
@@ -61,7 +64,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-    </>
+      </AuthContextProvider>
   );
 }
 

@@ -16,7 +16,7 @@ const AuthContextProvider = (props) => {
     token: token,
     isLoggedIn: userIsLoggedIn,
     login: loginHandler,
-    logout: loginHandler,
+    logout: logoutHandler,
   };
   return (
     <AuthContext.Provider value={contextValue}>
